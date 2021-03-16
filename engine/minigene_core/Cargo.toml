@@ -1,0 +1,17 @@
+[package]
+name = "minigene_core"
+version = "0.1.0"
+authors = ["jojolepro <jojolepro@jojolepro.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+default = []
+big_systems = ["planck_ecs/big_systems"]
+parallel = ["planck_ecs/parallel"]
+
+[dependencies]
+game_clock = { version = "1.0.0" }
+spin_sleep = "1.0.0"
+planck_ecs = { version = "1.0.0" }
+game_state_machine = { path = "../../../game_state_machine" }

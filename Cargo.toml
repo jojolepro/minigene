@@ -7,31 +7,28 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-default = ["terminal", "planck_ecs/parallel"]
-terminal = ["bracket-lib/crossterm", "crossterm"]
-opengl = ["bracket-lib/opengl"]
-headless = []
-wasm = ["wasm-bindgen", "bracket-lib/opengl", "web_worker"]
+default = []
+#frontend_terminal = ["bracket-lib/crossterm", "crossterm"]
+#frontend_opengl = ["bracket-lib/opengl"]
+parallel = ["minigene_core/parallel"]
+big_systems = ["minigene_core/big_systems"]
+
+# TODO use target flags instead of feat gates
+#wasm = ["wasm-bindgen", "bracket-lib/opengl", "web_worker"]
 
 [dependencies]
-#bracket-lib = { path = "../bracket-lib", default-features = false, features = ["specs", "threaded", "crossterm"] }
-#bracket-lib = { git = "https://github.com/jojolepro/bracket-lib", branch = "local", default-features = false, features = ["specs", "threaded", "opengl"] }
-bracket-lib = { git = "https://github.com/jojolepro/bracket-lib", branch = "winit_serde", default-features = false, features = ["threaded", "serde"] }
-#bracket-lib = { path="../bracket-lib", default-features = false, features = ["threaded", "serde"] }
-#bracket-lib = { git = "https://github.com/thebracket/bracket-lib", default-features = false, features = ["specs", "threaded", "serde"], rev = "c51b8becf85bf7fb14dbcd7891c10ad33b957afd" }
+minigene_core = { version = "0.1.0", path = "engine/minigene_core" }
+minigene_bracket = { version = "0.1.0", path = "engine/minigene_bracket" }
+#bracket-lib = { git = "https://github.com/jojolepro/bracket-lib", branch = "winit_serde", default-features = false, features = ["threaded", "serde"] }
 
 #game_features = { path = "../game_features" }
 #game_features = { version = "0.3.0" }
-game_features = { git = "https://github.com/jojolepro/game_features" }
+#game_features = { git = "https://github.com/jojolepro/game_features" }
 
-hibitset = "0.6.3"
-derive-new = "0.5.8"
-pushdown-automaton-macro = "0.1.0"
-wasm-bindgen = { version = "0.2.68", optional = true }
-web_worker = { version = "0.3.0", optional = true }
-game_clock = { version = "1.0.0" }
-stopwatch = { git = "https://github.com/jojolepro/rust-stopwatch", rev = "5ed6926a5aa5b21d58d2e67d179da1ec4cbc8a2e" }
-crossterm = { version = "0.18.0", optional = true }
-spin_sleep = "1.0.0"
-planck_ecs = { version = "1.0.0", features = ["big_systems"] }
-rayon = { version = "1.4.0" }
+#hibitset = "0.6.3"
+#derive-new = "0.5.8"
+#wasm-bindgen = { version = "0.2.68", optional = true }
+#web_worker = { version = "0.3.0", optional = true }
+#stopwatch = { git = "https://github.com/jojolepro/rust-stopwatch", rev = "5ed6926a5aa5b21d58d2e67d179da1ec4cbc8a2e" }
+#crossterm = { version = "0.18.0", optional = true }
+#rayon = { version = "1.4.0" }

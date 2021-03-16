@@ -1,0 +1,15 @@
+[package]
+name = "minigene_bracket"
+version = "0.1.0"
+authors = ["jojolepro <jojolepro@jojolepro.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+default = []
+crossterm = ["bracket-lib/crossterm"]
+opengl = ["bracket-lib/opengl"]
+
+[dependencies]
+minigene_core = { version = "0.1.0", path = "../minigene_core" }
+bracket-lib = { git = "https://github.com/jojolepro/bracket-lib", branch = "winit_serde", default-features = false, features = ["threaded", "serde"] }

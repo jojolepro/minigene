@@ -1,0 +1,1 @@
+/home/jojolepro/share/prog/rust/minigene/examples/minimal/target/debug/minimal: /home/jojolepro/share/prog/rust/game_state_machine/src/lib.rs /home/jojolepro/share/prog/rust/minigene/engine/minigene_core/src/lib.rs /home/jojolepro/share/prog/rust/minigene/examples/minimal/src/main.rs
